@@ -1,0 +1,65 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:import/typescript"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "import",
+        "jsx-a11y",
+        "react-hooks",
+        "eslint-plugin-import-helpers"
+    ],
+    "rules": {
+        "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+        "no-use-before-define": "off",
+        "import/extensions": [
+            "error",
+            {
+                "ts": "never",
+                "tsx": "never",
+                "js": "never",
+                "jsx": "never"
+            }
+        ],
+        "import/no-unresolved": "off"
+    },
+    "settings": {
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+            "typescript": {},
+            "node": {
+                "extensions": [".ts", ".tsx", ".js", ".jsx"]
+            },
+            "babel-plugin-root-import": {
+                "paths": [
+                    {
+                        "rootPathPrefix": "~",
+                        "rootPathSuffix": "src"
+                    }
+                ]
+            }
+        }
+    }
+}
